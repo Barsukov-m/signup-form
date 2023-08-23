@@ -1,0 +1,292 @@
+:root {
+  --background: #6d9ac4;
+  --foreground: #ffffff;
+  --black: #000000;
+  --text: #515151;
+  --primary: #ed5684;
+  --secondary: #9c9c9c;
+  --success: #45f395;
+  --danger: #ce1c18;
+  --disabled: #cdcdcd;
+  --google: #ce1c18;
+  --facebook: #52649f;
+  --linkedin: #2b66bf;
+}
+
+/* TODO:
+  - import Roboto font
+  - add vendor tags
+*/
+
+body {
+  background: var(--background);
+  margin: 0;
+  font: 400 14px "Roboto";
+  color: var(--text);
+}
+
+a {
+  color: var(--text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.signup__container {
+  max-width: 378px;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.signup__thumb {
+  text-align: center;
+}
+
+.signup__thumb svg {
+  transform: rotate(180deg);
+  transition: all 0.2s ease-in-out;
+}
+
+.signup__thumb path {
+  fill: var(--disabled);
+  transition: all 0.2s ease-in-out;
+}
+
+#indicator.valid svg {
+  transform: rotate(0deg);
+}
+
+#indicator.valid path {
+  fill: var(--success);
+}
+
+.signup__wr {
+  background: var(--foreground);
+  padding: 30px 45px 40px;
+  margin-top: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 8px var(--text);
+}
+
+.signup__wr button {
+  background: var(--primary);
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 8px;
+  color: var(--foreground);
+  line-height: 2.5;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 0 1px 4px var(--text);
+}
+
+.signup__wr form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 560px;
+  margin-top: 32px;
+}
+
+.signup__form-wr {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup h1 {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.signup__controls {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+
+.signup__controls label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.signup__controls input {
+  padding: 8px 10px;
+  line-height: 1.5;
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.error {
+  display: none;
+  color: var(--danger);
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+
+.show {
+  display: block !important;
+}
+
+.show-flex {
+  display: flex !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.strike {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.strike:before {
+  display: block;
+  content: "";
+  background: var(--secondary);
+  position: absolute;
+  width: 100%;
+  height: 1px;
+}
+
+.strike span {
+  background: var(--foreground);
+  display: block;
+  position: relative;
+  padding: 5px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+}
+
+.signup__social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.signup__social a,
+.signup__social path {
+  transition: all 0.2s ease-in;
+}
+
+.signup__social a {
+  display: flex;
+  padding: 6px;
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.signup__social .google {
+  border-color: var(--google);
+}
+
+.signup__social .google path {
+  fill: var(--google);
+}
+
+.signup__social .google:hover {
+  background: var(--google);
+}
+
+.signup__social .google:hover path {
+  fill: var(--foreground);
+}
+
+.signup__social .facebook {
+  border-color: var(--facebook);
+}
+
+.signup__social .facebook path {
+  fill: var(--facebook);
+}
+
+.signup__social .facebook:hover {
+  background: var(--facebook);
+}
+
+.signup__social .facebook:hover path {
+  fill: var(--foreground);
+}
+
+.signup__social .linkedin {
+  border-color: var(--linkedin);
+}
+
+.signup__social .linkedin path {
+  fill: var(--linkedin);
+}
+
+.signup__social .linkedin:hover {
+  background: var(--linkedin);
+}
+
+.signup__social .linkedin:hover path {
+  fill: var(--foreground);
+}
+
+.signup__registered {
+  margin: 22px 0;
+  text-align: center;
+}
+
+.signup__registered a:hover {
+  text-decoration: none;
+}
+
+.signup__good-approach {
+  text-align: center;
+  user-select: none;
+}
+
+.signup__success {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 560px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.signup__success-icon path {
+  fill: var(--secondary);
+}
+
+.shake {
+  animation: shake 0.6s linear;
+}
+
+@keyframes shake {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30% {
+    transform: translateX(-10px);
+  }
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-5px);
+  }
+  90% {
+    transform: translateX(5px);
+  }
+}
